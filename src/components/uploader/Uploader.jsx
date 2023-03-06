@@ -28,6 +28,7 @@ export function Uploader() {
   } = useSettings();
 
   const handleOnLoad = (response) => {
+    console.log(`🚀 ~ response:`, response);
     if (!response) return;
     const result = JSON.parse(response);
     console.log(`🚀 ~ result:`, result);
@@ -63,7 +64,7 @@ export function Uploader() {
             ondata: (formData) => {
               formData.append('file', files[0].file);
               formData.append('upload_preset', 'yoalpaao');
-              formData.append('api_key', 496498499269514);
+              formData.append('api_key', '496498499269514');
               formData.append('timestamp', (Date.now() / 1000) | 0);
               return formData;
             },
