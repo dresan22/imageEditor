@@ -49,7 +49,7 @@ export function Uploader() {
   return (
     <div className={`mx-auto ${moveToCorner}`}>
       <FilePond
-        // files={files}
+        files={files}
         onupdatefiles={setFiles}
         maxFiles={1}
         server={{
