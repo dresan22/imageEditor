@@ -57,7 +57,7 @@ export function Uploader() {
           process: {
             method: 'POST',
             withCredentials: false,
-            headers: {},
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
             timeout: 7000,
             onload: handleOnLoad,
             onerror: (response) => response.data,
@@ -77,3 +77,31 @@ export function Uploader() {
     </div>
   );
 }
+
+
+
+
+        //         files={files}
+        // allowMultiple={false}
+        // maxFiles={1}
+        // server={{
+        //   // url: myURL,
+        //   process: {
+        //     url: myURL,
+        //     method: 'POST',
+        //     withCredentials: false,
+        //     headers: {
+        //       'X-Requested-With': 'XMLHttpRequest',
+        //     },
+        //     ondata: (formData) => {
+        //       formData.append('file', files[0].file);
+
+        //       formData.append('upload_preset', 'dresan22');
+        //       formData.append('upload_preset', 'yoalpaao');
+        //       formData.append('api_key', '496498499269514');
+        //       formData.append('timestamp', (Date.now() / 1000) | 0);
+        //       return formData;
+        //     },
+        //     onload: handleOnLoad,
+        //   },
+        // }}
