@@ -61,6 +61,10 @@ export function Uploader() {
             onerror: (response) => response.data,
             ondata: (formData) => {
               formData.append('file', files[0].file);
+              console.log(
+                `🚀 ~ formData.append('file', files[0].file):`,
+                formData.append('file', files[0]?.file)
+              );
               formData.append('upload_preset', 'yoalpaao');
               formData.append('api_key', 496498499269514);
               formData.append('timestamp', (Date.now() / 1000) | 0);

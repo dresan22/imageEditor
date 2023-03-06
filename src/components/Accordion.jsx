@@ -23,11 +23,6 @@ export default function SimpleAccordion() {
     rotateImage,
   } = useSettings();
 
-  React.useEffect(() => {
-    console.log(`🚀 ~ height:`, height);
-    // setEditedImage(rotateImage(image).toURL());
-  }, [height]);
-
   return (
     <Box
       sx={{
