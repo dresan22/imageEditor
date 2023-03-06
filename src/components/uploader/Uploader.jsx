@@ -8,24 +8,24 @@ import useSettings from '../../store/Context';
 import './filepond.scss';
 
 export function Uploader() {
-  const myURL = 'https://api.cloudinary.com/v1_1/dresan22/image/upload';
+    const [files, setFiles] = React.useState([]);
 
-  const {
-    originalImage,
-    setOriginalImage,
-    files,
-    setFiles,
-    publicId,
-    setPublicId,
-    setUploadComplete,
-    uploadComplete,
-    setHeight,
-    setWidth,
-    setOriginalWidth,
-    setOriginalHeight,
-    imageURL,
-    setEditedImage,
-  } = useSettings();
+    const myURL = 'https://api.cloudinary.com/v1_1/dresan22/image/upload';
+
+    const {
+      originalImage,
+      setOriginalImage,
+      publicId,
+      setPublicId,
+      setUploadComplete,
+      uploadComplete,
+      setHeight,
+      setWidth,
+      setOriginalWidth,
+      setOriginalHeight,
+      imageURL,
+      setEditedImage,
+    } = useSettings();
 
   const handleOnLoad = (response) => {
     console.log(`🚀 ~ response:`, response);
