@@ -60,7 +60,7 @@ export function Uploader() {
             onload: handleOnLoad,
             onerror: (response) => response.data,
             ondata: (formData) => {
-              formData.append('file', files[0].file);
+              formData.append('file', files[0]?.file);
               console.log(
                 `🚀 ~ formData.append('file', files[0].file):`,
                 formData.append('file', files[0]?.file)
