@@ -30,6 +30,7 @@ export function Uploader() {
   const handleOnLoad = (response) => {
     if (!response) return;
     const result = JSON.parse(response);
+    console.log(`🚀 ~ result:`, result);
     // console.log(`🚀 ~ responseJSON:`, responseJSON);
     setOriginalImage(result.secure_url);
     setEditedImage(result.secure_url);
@@ -60,11 +61,7 @@ export function Uploader() {
             onload: handleOnLoad,
             onerror: (response) => response.data,
             ondata: (formData) => {
-              formData.append('file', files[0]?.file);
-              console.log(
-                `🚀 ~ formData.append('file', files[0].file):`,
-                formData.append('file', files[0]?.file)
-              );
+              formData.append('file', files[0].file);
               formData.append('upload_preset', 'yoalpaao');
               formData.append('api_key', 496498499269514);
               formData.append('timestamp', (Date.now() / 1000) | 0);
